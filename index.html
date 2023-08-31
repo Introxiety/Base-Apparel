@@ -19,13 +19,19 @@
 </head>
 <body>
   <header>
-    <img src="images/logo.svg" alt="base apparel logo">
+      <img src="images/logo.svg" alt="">
   </header>
-
+ 
   <main>
-    <section>
-      <img src="images/hero-mobile.jpg" alt="" class="hero-m">
-    </section>
+    <picture>
+      <source 
+      media="(min-width:90em)"
+      srcset="images/hero-desktop.jpg" >
+      <source 
+      media="(max-width:38.125em)"
+      srcset="images/hero-mobile.jpg">
+      <img src="images/hero-desktop.jpg" alt="Fallback image">
+    </picture>
     <section class="content">
       <h1><span>We're</span> coming soon</h1>
       <p> Hello fellow shoppers! We're currently building our new fashion store.
@@ -36,9 +42,6 @@
         </form>
     </section>
   </main>
-
-
-
 </body>
 
 </html>

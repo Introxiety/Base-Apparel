@@ -75,14 +75,15 @@ select {
 
 :root {
     --pink: hsl(0, 36%, 70%);
-    --So: hsl(0, 93%, 68%);
-    --Dark-Grayish-Red: hsl(0, 6%, 24%);
+    --dark-pink: hsl(0, 93%, 68%);
+    --brown: hsl(0, 6%, 24%);
 }
 
 body {
     font-family: 'Josefin Sans', sans-serif;
-    display: flex;
+    display: grid;
     flex-direction: column;
+    grid-template-rows: 5rem auto auto;
 }
 
 header {
@@ -151,4 +152,38 @@ button {
 
 .content p {
     color: var(--pink);
+}
+
+picture img{
+    width: 100%;
+}
+
+@media (min-width:90em) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 20rem auto;
+        grid-template-areas:
+          'header hero'
+          'content hero';
+        position: relative;
+      }
+      
+      header {
+        grid-area: header;
+      }
+      
+      .hero {
+        grid-area: hero;
+      }
+      
+      .content {
+        grid-area: content;
+      }
+    header{
+        padding: 3rem;
+    }
+    header img{
+        min-width: 15rem;
+    }
 }
